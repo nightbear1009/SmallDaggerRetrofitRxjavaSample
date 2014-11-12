@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    flavorDimensions "mode"
+    productFlavors{
+        dev{
+            flavorDimensions "mode"
+        }
+        testdev{
+            flavorDimensions "mode"
+        }
+    }
+    compileSdkVersion 21
+    buildToolsVersion '21.0.0'
+
+    defaultConfig {
+        applicationId "com.fanpage.tedliang.mysamplelistview"
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.retrofit:retrofit:1.7.1'
+    compile 'com.netflix.rxjava:rxjava-android:0.20.7'
+    provided 'com.squareup.dagger:dagger-compiler:1.2.2'
+    compile 'com.squareup.dagger:dagger:1.2.2'
+}
