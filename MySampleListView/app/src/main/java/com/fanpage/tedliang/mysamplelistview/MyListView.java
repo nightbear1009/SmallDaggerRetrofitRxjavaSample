@@ -84,6 +84,10 @@ public class MyListView extends ListView{
         return  subscription;
     }
 
+    public Observable<List<Contributor>> getObservable(){
+        return mObservable;
+    }
+
     public class MyGithubViewAdapter extends BaseAdapter {
 
         private List<Contributor> mData;
