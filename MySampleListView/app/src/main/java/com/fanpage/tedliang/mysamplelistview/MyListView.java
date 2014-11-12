@@ -63,16 +63,6 @@ public class MyListView extends ListView{
     private void init() {
         ObjectGraph graph = ObjectGraph.create(new MyModule(),new testDevModule());
         graph.inject(this);
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint(GitHubClient.API_URL)
-                .build();
-
-        // Create an instance of our GitHub API interface.
-//        github = restAdapter.create(GitHubClient.GitHub.class);
-        //test
-//        github = new MockGitHub();
-        // Fetch and print a list of the contributors to this library.
-
     }
 
     public Subscription parseData(String owner,String repo, final Activity activity){
