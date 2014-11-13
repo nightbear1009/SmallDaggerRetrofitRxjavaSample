@@ -14,15 +14,13 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.fanpage.tedliang.mysamplelistview.module.MyModule;
-import com.fanpage.tedliang.mysamplelistview.module.testDevModule;
+import com.fanpage.tedliang.mysamplelistview.module.Modules;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import dagger.ObjectGraph;
-import retrofit.RestAdapter;
 import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -61,7 +59,7 @@ public class MyListView extends ListView{
     }
 
     private void init() {
-        ObjectGraph graph = ObjectGraph.create(new MyModule(),new testDevModule());
+        ObjectGraph graph = ObjectGraph.create(Modules.list());
         graph.inject(this);
     }
 
